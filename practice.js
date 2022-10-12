@@ -92,9 +92,21 @@ function numberToLetter(element) {
   return String.fromCharCode(97 + element).toLowerCase();
 }
 
+function analyzeArray(array) {
+  let obj = {};
+
+  obj.average = array.reduce((prev, current) => prev + current, 0) / array.length;
+  obj.min = Math.min(...array);
+  obj.max = Math.max(...array);
+  obj.length = array.length;
+
+  return obj;
+}
+
 export {
   capitalize,
   reverseString,
   calculator,
   ceasarCipher,
+  analyzeArray,
 }
